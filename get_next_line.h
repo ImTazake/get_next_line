@@ -10,16 +10,16 @@
 
 typedef struct s_read
 {
-	char	    *buffer;
-	char	    *temp;
+	char		*buffer;
+	char		*temp;
 	ssize_t		bytes;
 }	t_read;
 
 typedef struct s_string
 {
-	char	    *result;
-	size_t	    i;
-	size_t	    j;
+	char		*result;
+	size_t		i;
+	size_t		j;
 }	t_string;
 
 char	*get_next_line(int fd);

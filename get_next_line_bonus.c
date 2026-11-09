@@ -40,7 +40,7 @@ static char	*get_line(char *stash)
 	if (!line)
 		return (NULL);
 	line[len] = '\0';
-    while (len--)
+	while (len--)
 		line[len] = stash[len];
 	return (line);
 }

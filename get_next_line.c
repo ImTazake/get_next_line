@@ -4,7 +4,7 @@ static char	*fill_stash(int fd, char *stash)
 {
 	t_read	data;
 
-    if (ft_strchr(stash, '\n'))
+	if (ft_strchr(stash, '\n'))
 		return (stash);
 	data.buffer = malloc(BUFFER_SIZE + 1);
 	if (!data.buffer)
@@ -25,6 +25,7 @@ static char	*fill_stash(int fd, char *stash)
 	free(data.buffer);
 	return (stash);
 }
+
 static char	*get_line(char *stash)
 {
 	char	*line;
@@ -39,10 +40,11 @@ static char	*get_line(char *stash)
 	if (!line)
 		return (NULL);
 	line[len] = '\0';
-    while (len--)
+	while (len--)
 		line[len] = stash[len];
 	return (line);
 }
+
 static char	*new_stash(char *stash)
 {
 	t_string	data;
@@ -63,6 +65,7 @@ static char	*new_stash(char *stash)
 	free(stash);
 	return (data.result);
 }
+
 char	*get_next_line(int fd)
 {
 	static char	*stash;
@@ -70,8 +73,8 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-    if (read(fd, NULL, 0) < 0)
-	    return (free(stash), stash = NULL, NULL);
+	if (read(fd, NULL, 0) < 0)
+		return (free(stash), stash = NULL, NULL);
 	stash = fill_stash(fd, stash);
 	if (!stash || !*stash)
 		return (free(stash), stash = NULL, NULL);
