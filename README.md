@@ -10,6 +10,8 @@ The main goal is to understand how file descriptors, static variables, memory al
 
 The function returns one line at a time, including the newline character (`\n`) when present. It also handles multiple calls until the end of the file is reached.
 
+**This is the version with a char pointer. In any case, this project reports "still reachable" in Valgrind. This can be addressed in the main function, but it is not the objective of the project.**
+
 ## Table of Contents
 
 1. [Description](#description)
